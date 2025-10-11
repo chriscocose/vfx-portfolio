@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getProjectBySlug } from "@/lib/data";
+import MediaPlayer from "@/components/MediaPlayer";
 
 type Params = { slug: string };
 
@@ -32,14 +33,10 @@ export default function ProjectPage({ params }: { params: Params }) {
           </div>
         </header>
 
-        <section aria-label="Preview" className="rounded-2xl border border-neutral-200 overflow-hidden">
-          <img
-            src={project!.mediaSrc}
-            alt=""
-            className="w-full aspect-video object-contain bg-neutral-50"
-          />
+        <section aria-label="Preview" className="rounded-2xl border border-white/10 overflow-hidden">
+          <MediaPlayer src={project!.mediaSrc} poster={project!.cover} />
         </section>
-
+        
         <section className="mt-6">
           <h2>Details</h2>
           <ul>
