@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 import IntroOverlay from "@/components/IntroOverlay"; // ⬅️ new (next step adds it)
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Your Name — VFX & Front-End",
+  title: "Chriscvisuals — VFX & Front-End",
   description:
     "Interactive VFX portfolio built with Next.js, TypeScript, Tailwind, and Framer Motion.",
+  icons: {
+    icon: "/chrisc.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -21,25 +25,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <IntroOverlay />
 
         {/* Header (shared) */}
-        <header className="sticky top-0 z-40 border-b border-white/10 bg-neutral-950/70 backdrop-blur">
-          <nav className="mx-auto max-w-7xl px-4 py-3 flex items-center gap-6" aria-label="Primary">
-          <Link href="/" className="flex items-center gap-2">
-              <img src="/chrisc.png" alt="Logo" className="h-6 w-auto" />
-              <span className="sr-only">Home</span>
-            </Link>
-            <div className="ml-auto flex gap-4">
-              <Link className="underline underline-offset-4" href="/work">Work</Link>
-              <Link className="underline underline-offset-4" href="/about">About</Link>
-              <Link className="underline underline-offset-4" href="/#contact">Contact</Link>
-            </div>
-            <a
-              href="#content"
-              className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded"
-            >
-              Skip to content
-            </a>
-          </nav>
-        </header>
+        <header className="flex items-center justify-between px-6 py-3 bg-neutral-950">
+  <Link href="/">
+    <Image src="/chrisc.png" alt="Logo" width={80} height={30} />
+  </Link>
+  <nav className="flex gap-6 text-white text-sm">
+    <Link href="/work" className="hover:underline">Work</Link>
+    <Link href="/about" className="hover:underline">About</Link>
+    <Link href="/contact" className="hover:underline">Contact</Link>
+  </nav>
+</header>
+
 
         {children}
 

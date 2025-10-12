@@ -1,66 +1,54 @@
+// src/app/work/[slug]/page.tsx
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProjectBySlug } from "@/lib/data";
-import MediaPlayer from "@/components/MediaPlayer";
+import { projects } from "@/lib/projects";
 
-type Params = { slug: string };
-
-export async function generateMetadata({ params }: { params: Params }) {
-  const project = getProjectBySlug(params.slug);
-  if (!project) return { title: "Project Not Found — Your Name" };
-  return {
-    title: `${project.title} — Your Name`,
-    description: project.summary,
-    openGraph: {
-      title: project.title,
-      description: project.summary,
-      images: [project.cover],
-    },
-  };
+// Build all slugs at compile time
+export function generateStaticParams() {
+  return projects.map((p) => ({ slug: p.slug }));
 }
 
-export default function ProjectPage({ params }: { params: Params }) {
-  const project = getProjectBySlug(params.slug);
+type RouteParams = { params?: { slug?: string } };
+
+export default function WorkItemPage(props: unknown) {
+  const { params } = (props as RouteParams) || {};
+  const slug = params?.slug;
+  if (!slug) notFound();
+
+  const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
 
   return (
-    <main id="content" className="mx-auto max-w-5xl px-4 py-8">
-      <article className="prose prose-neutral max-w-none">
-        <header className="mb-4">
-          <h1 className="!mb-1">{project!.title}</h1>
-          <p className="m-0 text-neutral-600">{project!.summary}</p>
-          <div className="mt-1 text-sm text-neutral-500">
-            {project!.year} · {project!.roles.join(" · ")}
-          </div>
-        </header>
+    <main id="content" className="mx-auto max-w-5xl px-4 py-10">
+      <nav className="mb-6">
+        <Link href="/work" className="underline underline-offset-4">
+          ← Back to Work
+        </Link>
+      </nav>
 
-        <section aria-label="Preview" className="rounded-2xl border border-white/10 overflow-hidden">
-        <video
-  className="w-full aspect-video rounded-2xl border border-white/10 bg-black"
-  src={project!.mediaSrc}
-  poster={project!.cover}
-  controls
-  playsInline
-  preload="metadata"
->
-  <source src={project!.mediaSrc} type="video/mp4" />
-</video>
-</section>
-
-        <section className="mt-6">
-          <h2>Details</h2>
-          <ul>
-            <li><strong>Tags:</strong> {project!.tags.join(", ")}</li>
-            {project!.client && <li><strong>Client:</strong> {project!.client}</li>}
-            {project!.credits?.length ? (
-              <li><strong>Credits:</strong> {project!.credits.join(", ")}</li>
-            ) : null}
-          </ul>
-        </section>
-
-        <p className="mt-6">
-          <a href="/work" className="underline underline-offset-4">← Back to Work</a>
+      <header className="mb-4">
+        <h1 className="text-3xl font-bold">{project.title}</h1>
+        <p className="mt-1 text-sm text-neutral-400">
+          {project.year} · {project.tags.join(" · ")}
         </p>
-      </article>
+      </header>
+
+      <section aria-label="Preview" className="flex flex-col gap-6">
+        <video
+          className="w-full aspect-video rounded-2xl border border-white/10 bg-black"
+          src={project.mediaSrc}
+          poster={project.cover}
+          controls
+          playsInline
+          preload="metadata"
+        >
+          <source src={project.mediaSrc} type="video/mp4" />
+        </video>
+      </section>
+
+      <section className="mt-6">
+        <p className="text-neutral-300">{project.summary}</p>
+      </section>
     </main>
   );
 }

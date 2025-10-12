@@ -2,7 +2,6 @@
 
 import { motion, type MotionProps, type Variants } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 
 // use a cubic-bezier instead of a string to satisfy TS
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;

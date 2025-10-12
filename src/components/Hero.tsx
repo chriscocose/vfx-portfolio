@@ -23,7 +23,7 @@ export default function Hero() {
         ref={vidRef}
         className="pointer-events-none absolute inset-0 -z-20 h-full w-full object-cover"
         src="/videos/hero.mp4"
-        poster="/covers/hero.jpg"
+        poster="/covers/square.jpg"
         autoPlay
         muted
         loop
