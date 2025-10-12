@@ -4,28 +4,28 @@ export const projects: Project[] = [
   {
     id: "sv-robot",
     slug: "hellbent-robot-visuals",
-    title: "HELLBENT Tour Visuals — “Robot” Sequence",
+    title: "HELLBENT Tour Visuals — Cloonee",
     year: 2025,
     roles: ["VFX", "Motion"],
-    tags: ["Stage Visuals", "3D", "Notch/AE"],
+    tags: ["Stage Visuals"],
     summary:
-      "Animated robot character, shader-driven scans, and sound-reactive FX delivered as show-ready loops.",
+      "Given an image plate, I combined my photo animation, compositing, and motion graphics skills to create a captivating looping rave visual to match the theme of HELLBENT. Delivered this visual as show-ready, and was shown to 1 million + people at large music festivals such as EDC Las Vegas, Lollapalooza Chicago, City Market Los Angeles, and more. ",
     cover: "/covers/cloonee.jpg",      // placeholder
     mediaType: "image",
-    mediaSrc: "/public/videos/cloonee.mp4",   // placeholder
+    mediaSrc: "/videos/clooneebreakdown.mp4",   // placeholder
   },
   {
-    id: "mv-dream",
-    slug: "music-video-dream-sequence",
-    title: "Music Video — “Dream Sequence”",
-    year: 2024,
+    id: "square",
+    slug: "square-commerical",
+    title: "Introducing: Square Releases",
+    year: 2025,
     roles: ["Editor", "VFX"],
-    tags: ["Music Videos", "Compositing", "Color"],
+    tags: ["TV"],
     summary:
-      "Edit, cleanup, matchmove, and stylized grade to achieve a surreal dreamlike aesthetic.",
-    cover: "/vercel.svg",
+      "I was tasked with creating stylish and unique photo animation segments utilizing photos and footage shot for this. I used my knowledge of motion, photo animation, and compositing, and created/delivered 5 sequences that were used throughout the commercial. This commercial was broadcasted on live television, and is shown in BestBuy stores on kisok screens for this Square mobile product.",
+    cover: "/covers/square.jpg",
     mediaType: "image",
-    mediaSrc: "/vercel.svg",
+    mediaSrc: "/videos/square.mp4",
   },
   {
     id: "vis-citrus",

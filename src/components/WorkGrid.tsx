@@ -6,7 +6,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { projects } from "@/lib/projects";
 
-const TABS = ["All", "Stage Visuals", "Music Videos", "Visualizers", "TV"] as const;
+const TABS = ["All", "Stage Visuals", "Music Videos", "TV", "Visualizers", "UI/UX"] as const;
 type Tab = typeof TABS[number];
 
 export default function WorkGrid() {
@@ -85,29 +85,49 @@ export default function WorkGrid() {
       >
         <AnimatePresence>
           {filtered.map((p) => (
-            <motion.li
-              key={p.id}
-              layout
-              initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16 }}
-              animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
-              exit={reduce ? { opacity: 0 } : { opacity: 0, y: -16 }}
-              transition={reduce ? { duration: 0.15 } : { type: "spring", stiffness: 60, damping: 12 }}
-              className="rounded-2xl border border-neutral-200 overflow-hidden bg-white"
-            >
-              <Link href={`/work/${p.slug}`} className="block">
-                {/* img now; we can switch to next/image later */}
-                <img
-                  src={p.cover}
-                  alt=""
-                  className="aspect-video w-full object-contain bg-neutral-50"
-                />
-                <div className="p-4">
-                  <h2 className="font-semibold leading-tight">{p.title}</h2>
-                  <p className="text-sm text-neutral-600 line-clamp-2 mt-1">{p.summary}</p>
-                  <div className="mt-2 text-xs text-neutral-500">{p.year} · {p.tags.join(" • ")}</div>
-                </div>
-              </Link>
-            </motion.li>
+           <motion.li
+           key={p.id}
+           layout
+           initial={{ opacity: 0, y: 16 }}
+           animate={{ opacity: 1, y: 0 }}
+           exit={{ opacity: 0, y: -16 }}
+           transition={{ type: "spring", stiffness: 60, damping: 12 }}
+           className="group overflow-hidden rounded-2xl border border-white/10 bg-neutral-900"
+         >
+           <Link href={`/work/${p.slug}`} className="block">
+             {/* wrapper so everything scales together */}
+             <div className="relative overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+               <img
+                 src={p.cover}
+                 alt={p.title}
+                 className="aspect-video w-full object-cover opacity-95"
+               />
+         
+               {/* dark gradient overlay that moves with image */}
+               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent transition-opacity group-hover:opacity-90" />
+               
+         
+               {/* text overlay */}
+               <div className="absolute inset-x-0 bottom-0 p-4">
+                 <h2 className="text-white font-semibold leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                   {p.title}
+                 </h2>
+                 <p className="mt-1 text-xs text-white/80">
+                   {p.year} · {p.tags.join(" · ")}
+                 </p>
+               </div>
+             </div>
+         
+             {/* summary below */}
+             <div className="p-4 border-t border-white/10">
+               <p className="text-sm text-neutral-300 line-clamp-3">
+                 {p.summary}
+               </p>
+             </div>
+           </Link>
+         </motion.li>
+         
+          
           ))}
         </AnimatePresence>
       </motion.ul>

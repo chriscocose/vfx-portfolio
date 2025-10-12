@@ -34,9 +34,18 @@ export default function ProjectPage({ params }: { params: Params }) {
         </header>
 
         <section aria-label="Preview" className="rounded-2xl border border-white/10 overflow-hidden">
-          <MediaPlayer src={project!.mediaSrc} poster={project!.cover} />
-        </section>
-        
+        <video
+  className="w-full aspect-video rounded-2xl border border-white/10 bg-black"
+  src={project!.mediaSrc}
+  poster={project!.cover}
+  controls
+  playsInline
+  preload="metadata"
+>
+  <source src={project!.mediaSrc} type="video/mp4" />
+</video>
+</section>
+
         <section className="mt-6">
           <h2>Details</h2>
           <ul>
