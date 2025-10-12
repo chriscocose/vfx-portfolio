@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     id: "sv-robot",
     slug: "hellbent-robot-visuals",
-    title: "HELLBENT Tour Visuals — Cloonee",
+    title: "'HELLBENT' 2025 Tour Visuals — Cloonee",
     year: 2025,
     roles: ["VFX", "Motion"],
     tags: ["Stage Visuals"],
@@ -13,6 +13,7 @@ export const projects: Project[] = [
     cover: "/covers/cloonee.jpg",      // placeholder
     mediaType: "image",
     mediaSrc: "/videos/clooneebreakdown.mp4",   // placeholder
+    featured: true,
   },
   {
     id: "square",
@@ -26,33 +27,37 @@ export const projects: Project[] = [
     cover: "/covers/square.jpg",
     mediaType: "image",
     mediaSrc: "/videos/square.mp4",
+    featured: true,
   },
   {
-    id: "vis-citrus",
-    slug: "visualizer-citrus-energy",
-    title: "Visualizer — Citrus Energy Campaign",
+    id: "sb",
+    slug: "sb-visuals",
+    title: "'GREYDAY' 2025 Tour Visuals - $UICIDEBOY$", 
     year: 2025,
-    roles: ["Motion", "Design"],
-    tags: ["Visualizers", "2D/3D", "Brand"],
+    roles: ["Motion", "Design", "VFX"],
+    tags: ["Stage Visuals"],
     summary:
-      "Hybrid 2D/3D visualizer series for streaming platforms and social media rollout.",
-    cover: "/vercel.svg",
+      "I was responsible for creating an entire song-synced visual to be used for the track 'Runnin Thru the 7th with My Woadies' on the GREYDAY tour. In 48 hours, using rennaisance inspired artwork that was modified to be of them in their style, I was able to create motions for each of them and tied it together with beat synced visuals for each section of the song. The visual was used in live performances across the US and Canada on their 50+ shows of their 'GREYDAY' tour.",
+    cover: "/covers/sb.jpg",
     mediaType: "image",
-    mediaSrc: "/vercel.svg",
+    mediaSrc: "/videos/sb.mp4",
+    featured: true,
   },
   {
-    id: "tv-glitch",
-    slug: "tv-glitch-bloom",
-    title: "TV Broadcast Package — “GLITCH BLOOM”",
-    year: 2023,
-    roles: ["Design", "Motion"],
-    tags: ["TV", "Broadcast", "AE"],
+    id: "lj",
+    slug: "lj-video",
+    title: "Larry June, Cardo Got Wings & E-40 - Ya Feel Me (Official Video)",
+    year: 2025,
+    roles: ["Title Card", "VFX"],
+    tags: ["Music Videos"],
     summary:
-      "Animated openers and lower-third transitions for a TV network package inspired by glitch art.",
-    cover: "/vercel.svg",
+      "",
+    cover: "/covers/lj.jpg",
     mediaType: "image",
-    mediaSrc: "/vercel.svg",
+    mediaSrc: "/videos/lj.mp4",
   },
+
+
 ];
 
 

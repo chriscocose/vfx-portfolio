@@ -23,8 +23,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Header (shared) */}
         <header className="sticky top-0 z-40 border-b border-white/10 bg-neutral-950/70 backdrop-blur">
           <nav className="mx-auto max-w-7xl px-4 py-3 flex items-center gap-6" aria-label="Primary">
-            <Link href="/" className="font-semibold tracking-tight">
-              Your Name — VFX & Front-End
+          <Link href="/" className="flex items-center gap-2">
+              <img src="/chrisc.png" alt="Logo" className="h-6 w-auto" />
+              <span className="sr-only">Home</span>
             </Link>
             <div className="ml-auto flex gap-4">
               <Link className="underline underline-offset-4" href="/work">Work</Link>
@@ -46,8 +47,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer id="contact" className="border-t border-white/10 mt-10">
           <div className="mx-auto max-w-7xl px-4 py-8 text-sm text-neutral-400">
             Contact:{" "}
-            <a className="underline underline-offset-4" href="mailto:hello@example.com">
-              hello@example.com
+            <a className="underline underline-offset-4" href="mailto:chriscvisuals@gmail.com">
+              chriscvisuals@gmail.com
             </a>
           </div>
         </footer>

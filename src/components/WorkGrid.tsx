@@ -43,7 +43,7 @@ export default function WorkGrid() {
       <header className="mb-6">
         <h1 id="work-heading" className="text-3xl font-bold">Work</h1>
         <p className="mt-2 text-neutral-600">
-          Browse by section or search. (Media is placeholder for now.)
+          Browse by section or search
         </p>
       </header>
 

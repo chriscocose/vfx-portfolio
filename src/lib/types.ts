@@ -14,5 +14,6 @@ export type Project = {
   client?: string;
   credits?: string[];
   durationSec?: number;
+  featured?: boolean;
 };
 
