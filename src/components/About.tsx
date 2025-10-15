@@ -3,10 +3,8 @@
 import { motion, type MotionProps, type Variants } from "framer-motion";
 import Link from "next/link";
 
-// use a cubic-bezier instead of a string to satisfy TS
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
-// ✅ type the helper as MotionProps so spreading is valid
 const fadeUp = (d = 0): MotionProps => ({
   initial: { opacity: 0, y: 14 },
   whileInView: { opacity: 1, y: 0 },
@@ -14,7 +12,6 @@ const fadeUp = (d = 0): MotionProps => ({
   transition: { duration: 0.55, ease: EASE_OUT, delay: d },
 });
 
-// (optional) also type your variants if you use them
 const listItem: Variants = {
   hidden: { opacity: 0, y: 10 },
   visible: {
@@ -23,7 +20,6 @@ const listItem: Variants = {
     transition: { duration: 0.45, ease: EASE_OUT },
   },
 };
-
 
 function Chip({ children }: { children: React.ReactNode }) {
   return (

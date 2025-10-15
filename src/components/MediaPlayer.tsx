@@ -27,7 +27,7 @@ export default function MediaPlayer({
     return (
       <div className={`relative w-full aspect-video bg-black ${className}`}>
         <iframe
-          src={src}                             // e.g., Vimeo embed URL
+          src={src}                             
           className="absolute inset-0 h-full w-full"
           allow="autoplay; fullscreen; picture-in-picture"
           loading="lazy"
@@ -41,11 +41,11 @@ export default function MediaPlayer({
     <video
       className={`w-full aspect-video bg-black ${className}`}
       src={src}
-      poster={poster}                          // shows before play
+      poster={poster}                          
       controls={controls}
-      playsInline                              // crucial for iOS
-      preload="metadata"                       // fast first paint
-      autoPlay={autoPlay}                      // requires muted to be true
+      playsInline                              
+      preload="metadata"                       
+      autoPlay={autoPlay}                      
       loop={loop}
       muted={muted}
     />

@@ -18,13 +18,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    // ⬇️ make dark the default
     <html lang="en" className="h-full dark">
       <body className={`${inter.className} min-h-screen bg-neutral-950 text-neutral-100`}>
-        {/* Intro overlay (plays once per session) */}
         <IntroOverlay />
 
-        {/* Header (shared) */}
         <header className="flex items-center justify-between px-6 py-3 bg-neutral-950">
   <Link href="/">
     <Image src="/chrisc.png" alt="Logo" width={80} height={30} />
@@ -32,14 +29,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   <nav className="flex gap-6 text-white text-sm">
     <Link href="/work" className="hover:underline">Work</Link>
     <Link href="/about" className="hover:underline">About</Link>
-    <Link href="/contact" className="hover:underline">Contact</Link>
+    
   </nav>
 </header>
 
 
         {children}
 
-        {/* Footer (shared) */}
         <footer id="contact" className="border-t border-white/10 mt-10">
           <div className="mx-auto max-w-7xl px-4 py-8 text-sm text-neutral-400">
             Contact:{" "}

@@ -8,7 +8,7 @@ export default function IntroOverlay() {
 
   // safety timer in case onAnimationComplete doesn't fire (slow devices)
   useEffect(() => {
-    const t = setTimeout(() => setShow(false), 2200); // duration+delay buffer
+    const t = setTimeout(() => setShow(false), 2200); 
     return () => clearTimeout(t);
   }, []);
 
@@ -25,7 +25,7 @@ export default function IntroOverlay() {
           aria-hidden="true"
         >
           <Image
-            src="/chrisc.png"     // your logo
+            src="/chrisc.png"     
             alt=""
             width={160}
             height={80}

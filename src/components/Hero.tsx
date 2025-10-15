@@ -69,7 +69,6 @@ export default function Hero() {
           </motion.h2>
         </div>
 
-        {/* 👇 animated subtext */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -100,5 +99,3 @@ export default function Hero() {
     </section>
   );
 }
-
-

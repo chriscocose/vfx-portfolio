@@ -1,7 +1,6 @@
-// src/app/work/page.tsx
 import { Suspense } from "react";
 import Link from "next/link";
-import WorkGrid from "@/components/WorkGrid"; // must be "use client" at top of file
+import WorkGrid from "@/components/WorkGrid"; 
 
 export const metadata = { title: "Work — Your Name" };
 
@@ -15,7 +14,6 @@ export default function WorkPage() {
         </p>
       </header>
 
-      {/* 👇 Required Suspense wrapper for components using useSearchParams */}
       <Suspense
         fallback={
           <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -33,5 +31,3 @@ export default function WorkPage() {
     </main>
   );
 }
-
-

@@ -1,9 +1,7 @@
-// src/app/work/[slug]/page.tsx
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/projects";
 
-// Build all slugs at compile time
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
