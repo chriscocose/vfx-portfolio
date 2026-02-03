@@ -42,44 +42,53 @@ export default function WorkGrid() {
     <section className="mx-auto max-w-7xl px-4 py-8" aria-labelledby="work-heading">
       <header className="mb-6">
         <h1 id="work-heading" className="text-3xl font-bold">Work</h1>
-        <p className="mt-2 text-neutral-600">
+        <p className="mt-2 text-white/60">
           Browse by section or search
         </p>
       </header>
 
       {/* Controls */}
-      <div className="flex flex-wrap items-center gap-2">
-        <input
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search projects…"
-          aria-label="Search projects"
-          className="px-3 py-2 rounded-xl border border-neutral-300"
-        />
-        <div role="tablist" aria-label="Work categories" className="flex flex-wrap gap-2">
-          {TABS.map((t) => (
-            <button
-              key={t}
-              role="tab"
-              aria-selected={cat === t}
-              onClick={() => setCat(t)}
-              className={`px-3 py-2 rounded-xl border text-sm transition
-              ${cat === t
-                ? "border-neutral-900"
-                : "border-neutral-300 hover:bg-neutral-100"}`}
-            >
-              {t}
-            </button>
-          ))}
-        </div>
-        <div className="ml-auto text-sm text-neutral-500" aria-live="polite">
-          {filtered.length} result{filtered.length === 1 ? "" : "s"}
-        </div>
-      </div>
+      
+<div className="flex flex-wrap items-center gap-2">
+  <input
+    value={query}
+    onChange={(e) => setQuery(e.target.value)}
+    placeholder="Search projects…"
+    aria-label="Search projects"
+    className="w-full sm:w-64 px-3 py-2 rounded-xl border border-white/10 bg-white/5 text-white placeholder:text-white/40
+               focus:outline-none focus-visible:ring-2 focus-visible:ring-white/25"
+  />
+
+  <div role="tablist" aria-label="Work categories" className="flex flex-wrap gap-2">
+    {TABS.map((t) => (
+      <button
+        key={t}
+        role="tab"
+        aria-selected={cat === t}
+        onClick={() => setCat(t)}
+        className={`px-3 py-2 rounded-xl border text-sm transition
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-white/25
+        ${
+          cat === t
+            ? "border-white/20 bg-white/10 text-white"
+            : "border-white/10 bg-white/5 text-white/75 hover:bg-white/10 hover:text-white"
+        }`}
+      >
+        {t}
+      </button>
+    ))}
+  </div>
+
+  <div className="ml-auto text-sm text-white/50" aria-live="polite">
+    {filtered.length} result{filtered.length === 1 ? "" : "s"}
+  </div>
+</div>
+
 
       {/* Grid */}
       <motion.ul
         layout
+        transition={{ duration: 0.2, ease: "easeOut" }}
         className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         aria-label="Project results"
       >
@@ -88,10 +97,10 @@ export default function WorkGrid() {
            <motion.li
            key={p.id}
            layout
-           initial={{ opacity: 0, y: 16 }}
+           initial={{ opacity: 0, y: 20}}
            animate={{ opacity: 1, y: 0 }}
-           exit={{ opacity: 0, y: -16 }}
-           transition={{ type: "spring", stiffness: 60, damping: 12 }}
+           exit={{ opacity: 0, transition: { duration: 0.1 } }}
+           transition={{ type: "spring", stiffness: 75, damping: 12 }}
            className="group overflow-hidden rounded-2xl border border-white/10 bg-neutral-900"
          >
            <Link href={`/work/${p.slug}`} className="block">
@@ -118,12 +127,7 @@ export default function WorkGrid() {
                </div>
              </div>
          
-             {/* summary below */}
-             <div className="p-4 border-t border-white/10">
-               <p className="text-sm text-neutral-300 line-clamp-3">
-                 {p.summary}
-               </p>
-             </div>
+            
            </Link>
          </motion.li>
          

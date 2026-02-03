@@ -28,3 +28,11 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+::selection {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}

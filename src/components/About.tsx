@@ -75,8 +75,8 @@ export default function About() {
           <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {[
               "After Effects / Expressions",
-              "JavaScript / TypeScript",
-              "React / Next.js / Tailwind / Framer Motion",
+              "Photoshop / Illustrator",
+              "React / JavaScript / TypeScript",
             ].map((t) => (
               <li
                 key={t}
@@ -109,17 +109,17 @@ export default function About() {
               {
                 title: "Performance",
                 body:
-                  "Ship smooth 60fps experiences with lazy loading, responsive media, memoized components, and GPU-accelerated animation.",
+                  "Ship smooth experiences with lazy loading, responsive media, memoized components, and GPU-accelerated animation.",
               },
               {
                 title: "Accessibility",
                 body:
-                  "Keyboard paths, reduced-motion support, semantic structure, and high-contrast defaults — by design, not afterthought.",
+                  "Keyboard paths, reduced-motion support, semantic structure, and high-contrast defaults. Design led, not afterthought.",
               },
               {
                 title: "Production discipline",
                 body:
-                  "Clean architecture, reusable primitives, type safety, and automated checks — so creativity scales.",
+                  "Clean architecture, reusable primitives, type safety, and automated checks.",
               },
             ].map((item) => (
               <motion.div

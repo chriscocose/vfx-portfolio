@@ -6,13 +6,8 @@ export const metadata = { title: "Work — Your Name" };
 
 export default function WorkPage() {
   return (
-    <main id="content" className="mx-auto max-w-7xl px-4 py-8">
-      <header className="mb-6">
-        <h1 className="text-3xl font-bold">Work</h1>
-        <p className="mt-2 text-neutral-400">
-          A selection of projects. (Filters & media coming next.)
-        </p>
-      </header>
+    <main id="content" className="mx-auto max-w-7xl px-4 py-2">
+    
 
       <Suspense
         fallback={

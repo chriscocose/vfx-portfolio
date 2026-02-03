@@ -38,7 +38,7 @@ export default function Hero() {
       {/* content */}
       <div className="mx-auto max-w-7xl px-4 pt-20 pb-14 md:pt-28 md:pb-20">
         <p className="text-xs uppercase tracking-[0.18em] text-white/60 mb-2">
-          Portfolio & Case Study
+          Portfolio
         </p>
 
         {/* staggered hero lines */}
@@ -65,7 +65,7 @@ export default function Hero() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.7 }}
             className="text-5xl md:text-6xl font-extrabold tracking-tight"
           >
-            UI/UX Developer
+            Interface Developer
           </motion.h2>
         </div>
 
