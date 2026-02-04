@@ -70,6 +70,19 @@ export const projects: Project[] = [
     mediaSrc: "/videos/miami.mp4",
   },
   {
+    id: "accessibility",
+    slug: "accessibility-ui",
+    title: "Game Interface Case Study - Accessibility",
+    year: 2026,
+    roles: ["Design", "VFX", "UI/UX"],
+    tags: ["UI/UX"],
+    summary:
+      "This project is a focused game UI motion study built to explore hierarchy, interaction clarity, and modular component design within a real-time settings interface. The goal was to create a clean, functional accessibility screen that prioritizes readability, fast interaction, and predictable behavior across different input methods. The layout was designed using a consistent spacing system and clear visual hierarchy, ensuring that section titles, setting labels, and values are easily scannable at a glance. Each interactive element—such as toggles and sliders—was built as a modular component, allowing it to be reused across multiple screens and resolutions. Motion was introduced only where interaction occurs. Hover and press animations were timed around real-time UI standards (approximately 100–150ms) to keep the interface responsive and unobtrusive. The animations focus on reinforcing state changes and user feedback rather than decorative movement. The background motion was also animated by me, for a stylistic touch. All elements were constructed using vector-based shape layers and organized as individual components, making them suitable for export and implementation in a game engine.",
+    cover: "/covers/Accessibility.jpg",
+    mediaType: "image",
+    mediaSrc: "/videos/Accessibility.mp4",
+  },
+  {
     id: "psycho",
     slug: "psycho-video",
     title: "GoVanni!- Psycho (Official Video)",
