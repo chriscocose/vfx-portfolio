@@ -96,19 +96,6 @@ export const projects: Project[] = [
     mediaSrc: "/videos/psycho.mp4",
   },
   {
-    id: "sexy",
-    slug: "sexy-visuals",
-    title: "Sexyy Red - Tour Visuals",
-    year: 2025,
-    roles: ["Design", "VFX", "UI/UX"],
-    tags: ["Stage Visuals"],
-    summary:
-      "Created a looping stage visual used in Sexyy Red's 2025 Tour to the song 'Looking For The Hoes(Ain't My Fault)'. Made in collaboration with artist Maya Franz.",
-    cover: "/covers/sexy.jpg",
-    mediaType: "image",
-    mediaSrc: "/videos/sexy.mp4",
-  },
-  {
     id: "babytron",
     slug: "babytron-video",
     title: "BabyTron - Down, Up! (Official Video)",
@@ -215,8 +202,19 @@ export const projects: Project[] = [
     mediaType: "image",
     mediaSrc: "/videos/paid.mp4",
   },
-
-
+  {
+    id: "sexy",
+    slug: "sexy-visuals",
+    title: "Sexyy Red - Tour Visuals",
+    year: 2025,
+    roles: ["Design", "VFX", "UI/UX"],
+    tags: ["Stage Visuals"],
+    summary:
+      "Created a looping stage visual used in Sexyy Red's 2025 Tour to the song 'Looking For The Hoes(Ain't My Fault)'. Made in collaboration with artist Maya Franz.",
+    cover: "/covers/sexy.jpg",
+    mediaType: "image",
+    mediaSrc: "/videos/sexy.mp4",
+  },
 ];
 
 
