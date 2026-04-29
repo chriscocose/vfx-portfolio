@@ -16,6 +16,20 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: "idk",
+    slug: "idkidk",
+    title: "Jim Legxacy 'idk,idk' (Official Video)",
+    year: 2025,
+    roles: ["VFX", "Motion"],
+    tags: ["Music Videos"],
+    summary:
+      "Lead VFX, title card, intro, SFX.",
+    cover: "/covers/idk.jpg",      // placeholder
+    mediaType: "image",
+    mediaSrc: "/videos/idk.mp4",   // placeholder
+    featured: true,
+  },
+  {
     id: "square",
     slug: "square-commerical",
     title: "Introducing: Square Releases",
